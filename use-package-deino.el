@@ -72,6 +72,18 @@ ARGS, REST, and STATE are prepared by `use-package-normalize/:deino+'."
 
 ;; Adapted From: https://github.com/jwiegley/use-package/blob/master/use-package-core.el#L1153
 ;;;###autoload
+(defalias 'use-package-normalize/:cosmoem 'use-package-normalize-forms)
+
+;;;###autoload
+(defun use-package-handler/:cosmoem (name keyword args rest state)
+  (use-package-concat
+   (mapcar #'(lambda (def) `(cosmoem-def ,@def)) args)
+   (use-package-process-keywords name rest state)))
+
+(add-to-list 'use-package-keywords :cosmoem t)
+
+;; Adapted From: https://github.com/jwiegley/use-package/blob/master/use-package-core.el#L1153
+;;;###autoload
 (defalias 'use-package-normalize/:hercules 'use-package-normalize-forms)
 
 ;;;###autoload
