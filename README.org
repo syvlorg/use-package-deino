@@ -77,6 +77,20 @@ ARGS, REST, and STATE are prepared by `use-package-normalize/:deino+'."
 
 (add-to-list 'use-package-keywords :deino+ t)
 
+;;;###autoload
+(defalias 'use-package-normalize/:deinor+ 'use-package-normalize/:hydra
+  "Normalize for the definition of one or more plus deinos.")
+
+;;;###autoload
+(defun use-package-handler/:deinor+ (name keyword args rest state)
+  "Generate defdeino+ with NAME for `:deinor+' KEYWORD.
+ARGS, REST, and STATE are prepared by `use-package-normalize/:deinor+'."
+  (use-package-concat
+   (mapcar #'(lambda (def) `(defdeinor+ ,@def)) args)
+   (use-package-process-keywords name rest state)))
+
+(add-to-list 'use-package-keywords :deinor+ t)
+
 ;; Adapted From: https://github.com/jwiegley/use-package/blob/master/use-package-core.el#L1153
 ;;;###autoload
 (defalias 'use-package-normalize/:cosmoem 'use-package-normalize-forms)
