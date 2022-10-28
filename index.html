@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-10-28 Fri 03:36 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Jeet Ray" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://combinatronics.io/sylvorg/settings/main/src/styles/primary/syvl.css" />
+<link rel="icon" href="https://combinatronics.io/sylvorg/settings/main/src/icons/favicons/shiny-zigzagoon-galar.ico" sizes="any" />
+<link rel="icon" href="https://combinatronics.io/sylvorg/settings/main/src/icons/favicons/shiny-zigzagoon-galar.svg" />
+<link rel="manifest" href="https://combinatronics.io/sylvorg/settings/main/manifest.json" />
+<link rel="stylesheet" type="text/css" href="https://combinatronics.io/sylvorg/settings/main/src/styles/highlight/paraiso-dark.min.css" />
+<script src="https://combinatronics.io/sylvorg/settings/main/src/scripts/highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<div class="header">
+<h1>We Are Syvlorg.</h1>
+<a href="">About Me</a>
+<a href="">About This Website</a>
+<a href="">About Syvlorg</a>
+<a href="https://resume.syvl.org">Résumé</a>
+<a href="https://index.syvl.org">Index</a>
+</div>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org5c33be3">use-package-deino.el</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5c33be3" class="outline-2">
+<h2 id="org5c33be3">use-package-deino.el</h2>
+<div class="outline-text-2" id="text-org5c33be3">
+<div class="org-src-container">
+<pre><code class="language-lisp match-braces rainbow-braces">;;; use-package-deino.el --- a simple package                     -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2021  Jeet Ray
+
+;; Author: Jeet Ray &lt;aiern@protonmail.com&gt;
+;; Keywords: lisp
+;; Version: 0.0.1
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+
+;;; Commentary:
+
+;; Primarily adapted from https://gitlab.com/to1ne/use-package-hydra/-/blob/master/use-package-hydra.el
+
+;;; Code:
+
+(require 'use-package-core)
+(require 'use-package-hydra)
+
+;;;###autoload
+(defalias 'use-package-normalize/:hydra+ 'use-package-normalize/:hydra
+  "Normalize for the definition of one or more plus hydras.")
+
+;;;###autoload
+(defun use-package-handler/:hydra+ (name keyword args rest state)
+  "Generate defhydra+ with NAME for `:hydra+' KEYWORD.
+ARGS, REST, and STATE are prepared by `use-package-normalize/:hydra+'."
+  (use-package-concat
+   (mapcar #'(lambda (def) `(defhydra+ ,@def)) args)
+   (use-package-process-keywords name rest state)))
+
+(add-to-list 'use-package-keywords :hydra+ t)
+
+;;;###autoload
+(defalias 'use-package-normalize/:deino 'use-package-normalize/:hydra
+  "Normalize for the definition of one or more deinos.")
+
+;;;###autoload
+(defun use-package-handler/:deino (name keyword args rest state)
+  "Generate defdeino with NAME for `:deino' KEYWORD.
+ARGS, REST, and STATE are prepared by `use-package-normalize/:deino'."
+  (use-package-concat
+   (mapcar #'(lambda (def) `(defdeino ,@def)) args)
+   (use-package-process-keywords name rest state)))
+
+(add-to-list 'use-package-keywords :deino t)
+
+;;;###autoload
+(defalias 'use-package-normalize/:deino+ 'use-package-normalize/:hydra
+  "Normalize for the definition of one or more plus deinos.")
+
+;;;###autoload
+(defun use-package-handler/:deino+ (name keyword args rest state)
+  "Generate defdeino+ with NAME for `:deino+' KEYWORD.
+ARGS, REST, and STATE are prepared by `use-package-normalize/:deino+'."
+  (use-package-concat
+   (mapcar #'(lambda (def) `(defdeino+ ,@def)) args)
+   (use-package-process-keywords name rest state)))
+
+(add-to-list 'use-package-keywords :deino+ t)
+
+;;;###autoload
+(defalias 'use-package-normalize/:deinor+ 'use-package-normalize/:hydra
+  "Normalize for the definition of one or more plus deinos.")
+
+;;;###autoload
+(defun use-package-handler/:deinor+ (name keyword args rest state)
+  "Generate defdeino+ with NAME for `:deinor+' KEYWORD.
+ARGS, REST, and STATE are prepared by `use-package-normalize/:deinor+'."
+  (use-package-concat
+   (mapcar #'(lambda (def) `(defdeinor+ ,@def)) args)
+   (use-package-process-keywords name rest state)))
+
+(add-to-list 'use-package-keywords :deinor+ t)
+
+;; Adapted From: https://github.com/jwiegley/use-package/blob/master/use-package-core.el#L1153
+;;;###autoload
+(defalias 'use-package-normalize/:cosmoem 'use-package-normalize-forms)
+
+;;;###autoload
+(defun use-package-handler/:cosmoem (name keyword args rest state)
+  (use-package-concat
+   (mapcar #'(lambda (def) `(cosmoem-def ,@def)) args)
+   (use-package-process-keywords name rest state)))
+
+(add-to-list 'use-package-keywords :cosmoem t)
+
+;; Adapted From: https://github.com/jwiegley/use-package/blob/master/use-package-core.el#L1153
+;;;###autoload
+(defalias 'use-package-normalize/:hercules 'use-package-normalize-forms)
+
+;;;###autoload
+(defun use-package-handler/:hercules (name keyword args rest state)
+  (use-package-concat
+   (mapcar #'(lambda (def) `(hercules-def ,@def)) args)
+   (use-package-process-keywords name rest state)))
+
+(add-to-list 'use-package-keywords :hercules t)
+
+(provide 'use-package-deino)
+;;; use-package-deino.el ends here
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jeet Ray</p>
+<p class="date">Created: 2022-10-28 Fri 03:36</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

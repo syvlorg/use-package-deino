@@ -1,6 +1,3 @@
-#+setupfile: ./settings/README.org
-#+include: ./settings/README.org
-
 * use-package-deino.el
 
 #+begin_src emacs-lisp :tangle (meq/tangle-path)
