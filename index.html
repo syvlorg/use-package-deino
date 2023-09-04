@@ -3,18 +3,18 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-14 Mon 05:52 -->
+<!-- 2023-09-04 Mon 12:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="Jeet Ray" />
-<link rel="stylesheet" type="text/css" href="https://combinatronics.io/sylvorg/settings/main/src/styles/primary/syvl.css" />
-<link rel="icon" href="https://combinatronics.io/sylvorg/settings/main/src/icons/favicons/shiny-zigzagoon-galar.ico" sizes="any" />
-<link rel="icon" href="https://combinatronics.io/sylvorg/settings/main/src/icons/favicons/shiny-zigzagoon-galar.svg" />
-<link rel="manifest" href="https://combinatronics.io/sylvorg/settings/main/manifest.json" />
-<link rel="stylesheet" type="text/css" href="https://combinatronics.io/sylvorg/settings/main/src/styles/highlight/paraiso-dark.min.css" />
-<script src="https://combinatronics.io/sylvorg/settings/main/src/scripts/highlight/highlight.min.js"></script>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://combinatronics.io/sylvorg/bundle/main/src/styles/primary/syvl.css" />
+<link rel="icon" href="https://combinatronics.io/sylvorg/bundle/main/src/icons/favicons/shiny-zigzagoon-galar.ico" sizes="any" />
+<link rel="icon" href="https://combinatronics.io/sylvorg/bundle/main/src/icons/favicons/shiny-zigzagoon-galar.svg" />
+<link rel="manifest" href="https://combinatronics.io/sylvorg/bundle/main/manifest.json" />
+<link rel="stylesheet" type="text/css" href="https://combinatronics.io/sylvorg/bundle/main/src/styles/highlight/paraiso-dark.min.css" />
+<script src="https://combinatronics.io/sylvorg/bundle/main/src/scripts/highlight/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <div class="header">
 <h1>We Are Syvlorg.</h1>
@@ -24,156 +24,134 @@
 <a href="https://resume.syvl.org">Résumé</a>
 <a href="https://index.syvl.org">Index</a>
 </div>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
-<div id="table-of-contents">
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgcc0e109">use-package-deino.el</a></li>
+<li><a href="#orgd0622e1">use-package-deino.el</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgcc0e109" class="outline-2">
-<h2 id="orgcc0e109">use-package-deino.el</h2>
-<div class="outline-text-2" id="text-orgcc0e109">
+<div id="outline-container-orgd0622e1" class="outline-2">
+<h2 id="orgd0622e1">use-package-deino.el</h2>
+<div class="outline-text-2" id="text-orgd0622e1">
 <div class="org-src-container">
-<pre><code class="language-lisp match-braces rainbow-braces">;;; use-package-deino.el --- a simple package                     -*- lexical-binding: t; -*-
+<pre><code class="language-lisp match-braces rainbow-braces"><span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">use-package-deino.el --- a simple package                     -*- lexical-binding: t; -*-</span>
 
-;; Copyright (C) 2021  Jeet Ray
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Copyright (C) 2021  Jeet Ray</span>
 
-;; Author: Jeet Ray &lt;aiern@protonmail.com&gt;
-;; Keywords: lisp
-;; Version: 0.0.1
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Author: Jeet Ray <a href="mailto:aiern%40protonmail.com">&lt;aiern@protonmail.com&gt;</a></span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Keywords: lisp</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Version: 0.0.1</span>
 
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This program is free software; you can redistribute it and/or modify</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">it under the terms of the GNU General Public License as published by</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">the Free Software Foundation, either version 3 of the License, or</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(at your option) any later version.</span>
 
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This program is distributed in the hope that it will be useful,</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">GNU General Public License for more details.</span>
 
-;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">You should have received a copy of the GNU General Public License</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">along with this program.  If not, see <a href="http://www.gnu.org/licenses/">&lt;http://www.gnu.org/licenses/&gt;</a>.</span>
 
-;;; Commentary:
+<span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">Commentary:</span>
 
-;; Primarily adapted from https://gitlab.com/to1ne/use-package-hydra/-/blob/master/use-package-hydra.el
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Primarily adapted from https://gitlab.com/to1ne/use-package-hydra/-/blob/master/use-package-hydra.el</span>
 
-;;; Code:
+<span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">Code:</span>
 
-(require 'use-package-core)
-(require 'use-package-hydra)
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">use-package-core</span>)
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">use-package-hydra</span>)
 
-;;;###autoload
-(defalias 'use-package-normalize/:hydra+ 'use-package-normalize/:hydra
-  "Normalize for the definition of one or more plus hydras.")
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defalias</span> '<span style="font-weight: bold;">use-package-normalize/:hydra+</span> 'use-package-normalize/:hydra
+  <span style="font-style: italic;">"Normalize for the definition of one or more plus hydras."</span>)
 
-;;;###autoload
-(defun use-package-handler/:hydra+ (name keyword args rest state)
-  "Generate defhydra+ with NAME for `:hydra+' KEYWORD.
-ARGS, REST, and STATE are prepared by `use-package-normalize/:hydra+'."
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">use-package-handler/:hydra+</span> (name keyword args rest state)
+  <span style="font-style: italic;">"Generate defhydra+ with NAME for `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">:hydra+</span><span style="font-style: italic;">' KEYWORD.</span>
+<span style="font-style: italic;">ARGS, REST, and STATE are prepared by `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">use-package-normalize/:hydra+</span><span style="font-style: italic;">'."</span>
   (use-package-concat
-   (mapcar #'(lambda (def) `(defhydra+ ,@def)) args)
+   (mapcar #'(<span style="font-weight: bold;">lambda</span> (def) `(defhydra+ ,@def)) args)
    (use-package-process-keywords name rest state)))
 
-(add-to-list 'use-package-keywords :hydra+ t)
+(add-to-list 'use-package-keywords <span style="font-weight: bold;">:hydra+</span> t)
 
-;;;###autoload
-(defalias 'use-package-normalize/:deino 'use-package-normalize/:hydra
-  "Normalize for the definition of one or more deinos.")
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defalias</span> '<span style="font-weight: bold;">use-package-normalize/:deino</span> 'use-package-normalize/:hydra
+  <span style="font-style: italic;">"Normalize for the definition of one or more deinos."</span>)
 
-;;;###autoload
-(defun use-package-handler/:deino (name keyword args rest state)
-  "Generate defdeino with NAME for `:deino' KEYWORD.
-ARGS, REST, and STATE are prepared by `use-package-normalize/:deino'."
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">use-package-handler/:deino</span> (name keyword args rest state)
+  <span style="font-style: italic;">"Generate defdeino with NAME for `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">:deino</span><span style="font-style: italic;">' KEYWORD.</span>
+<span style="font-style: italic;">ARGS, REST, and STATE are prepared by `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">use-package-normalize/:deino</span><span style="font-style: italic;">'."</span>
   (use-package-concat
-   (mapcar #'(lambda (def) `(defdeino ,@def)) args)
+   (mapcar #'(<span style="font-weight: bold;">lambda</span> (def) `(defdeino ,@def)) args)
    (use-package-process-keywords name rest state)))
 
-(add-to-list 'use-package-keywords :deino t)
+(add-to-list 'use-package-keywords <span style="font-weight: bold;">:deino</span> t)
 
-;;;###autoload
-(defalias 'use-package-normalize/:deino+ 'use-package-normalize/:hydra
-  "Normalize for the definition of one or more plus deinos.")
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defalias</span> '<span style="font-weight: bold;">use-package-normalize/:deino+</span> 'use-package-normalize/:hydra
+  <span style="font-style: italic;">"Normalize for the definition of one or more plus deinos."</span>)
 
-;;;###autoload
-(defun use-package-handler/:deino+ (name keyword args rest state)
-  "Generate defdeino+ with NAME for `:deino+' KEYWORD.
-ARGS, REST, and STATE are prepared by `use-package-normalize/:deino+'."
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">use-package-handler/:deino+</span> (name keyword args rest state)
+  <span style="font-style: italic;">"Generate defdeino+ with NAME for `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">:deino+</span><span style="font-style: italic;">' KEYWORD.</span>
+<span style="font-style: italic;">ARGS, REST, and STATE are prepared by `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">use-package-normalize/:deino+</span><span style="font-style: italic;">'."</span>
   (use-package-concat
-   (mapcar #'(lambda (def) `(defdeino+ ,@def)) args)
+   (mapcar #'(<span style="font-weight: bold;">lambda</span> (def) `(defdeino+ ,@def)) args)
    (use-package-process-keywords name rest state)))
 
-(add-to-list 'use-package-keywords :deino+ t)
+(add-to-list 'use-package-keywords <span style="font-weight: bold;">:deino+</span> t)
 
-;;;###autoload
-(defalias 'use-package-normalize/:deinor+ 'use-package-normalize/:hydra
-  "Normalize for the definition of one or more plus deinos.")
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defalias</span> '<span style="font-weight: bold;">use-package-normalize/:deinor+</span> 'use-package-normalize/:hydra
+  <span style="font-style: italic;">"Normalize for the definition of one or more plus deinos."</span>)
 
-;;;###autoload
-(defun use-package-handler/:deinor+ (name keyword args rest state)
-  "Generate defdeino+ with NAME for `:deinor+' KEYWORD.
-ARGS, REST, and STATE are prepared by `use-package-normalize/:deinor+'."
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">use-package-handler/:deinor+</span> (name keyword args rest state)
+  <span style="font-style: italic;">"Generate defdeino+ with NAME for `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">:deinor+</span><span style="font-style: italic;">' KEYWORD.</span>
+<span style="font-style: italic;">ARGS, REST, and STATE are prepared by `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">use-package-normalize/:deinor+</span><span style="font-style: italic;">'."</span>
   (use-package-concat
-   (mapcar #'(lambda (def) `(defdeinor+ ,@def)) args)
+   (mapcar #'(<span style="font-weight: bold;">lambda</span> (def) `(defdeinor+ ,@def)) args)
    (use-package-process-keywords name rest state)))
 
-(add-to-list 'use-package-keywords :deinor+ t)
+(add-to-list 'use-package-keywords <span style="font-weight: bold;">:deinor+</span> t)
 
-;; Adapted From: https://github.com/jwiegley/use-package/blob/master/use-package-core.el#L1153
-;;;###autoload
-(defalias 'use-package-normalize/:cosmoem 'use-package-normalize-forms)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Adapted From: https://github.com/jwiegley/use-package/blob/master/use-package-core.el#L1153</span>
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defalias</span> '<span style="font-weight: bold;">use-package-normalize/:cosmoem</span> 'use-package-normalize-forms)
 
-;;;###autoload
-(defun use-package-handler/:cosmoem (name keyword args rest state)
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">use-package-handler/:cosmoem</span> (name keyword args rest state)
   (use-package-concat
-   (mapcar #'(lambda (def) `(cosmoem-def ,@def)) args)
+   (mapcar #'(<span style="font-weight: bold;">lambda</span> (def) `(cosmoem-def ,@def)) args)
    (use-package-process-keywords name rest state)))
 
-(add-to-list 'use-package-keywords :cosmoem t)
+(add-to-list 'use-package-keywords <span style="font-weight: bold;">:cosmoem</span> t)
 
-;; Adapted From: https://github.com/jwiegley/use-package/blob/master/use-package-core.el#L1153
-;;;###autoload
-(defalias 'use-package-normalize/:hercules 'use-package-normalize-forms)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Adapted From: https://github.com/jwiegley/use-package/blob/master/use-package-core.el#L1153</span>
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defalias</span> '<span style="font-weight: bold;">use-package-normalize/:hercules</span> 'use-package-normalize-forms)
 
-;;;###autoload
-(defun use-package-handler/:hercules (name keyword args rest state)
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">use-package-handler/:hercules</span> (name keyword args rest state)
   (use-package-concat
-   (mapcar #'(lambda (def) `(hercules-def ,@def)) args)
+   (mapcar #'(<span style="font-weight: bold;">lambda</span> (def) `(hercules-def ,@def)) args)
    (use-package-process-keywords name rest state)))
 
-(add-to-list 'use-package-keywords :hercules t)
+(add-to-list 'use-package-keywords <span style="font-weight: bold;">:hercules</span> t)
 
-(provide 'use-package-deino)
-;;; use-package-deino.el ends here
+(<span style="font-weight: bold;">provide</span> '<span style="font-weight: bold; text-decoration: underline;">use-package-deino</span>)
+<span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">use-package-deino.el ends here</span>
 </code></pre>
 </div>
 </div>
@@ -181,7 +159,7 @@ ARGS, REST, and STATE are prepared by `use-package-normalize/:deinor+'."
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jeet Ray</p>
-<p class="date">Created: 2022-11-14 Mon 05:52</p>
+<p class="date">Created: 2023-09-04 Mon 12:29</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
